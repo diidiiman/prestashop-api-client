@@ -306,8 +306,8 @@ export const Resource = resources.Resource = class {
    * @param void
    * @return {Array}
    */
-  list (filter={}) {
-    return this.client.get(this.options.root, {query: filter})
+  list (query={}) {
+    return this.client.get(this.options.root, {query: query})
 
     .then((response) => response.clone().text())
     .then((xml) => this.parseModelIds(xml))
